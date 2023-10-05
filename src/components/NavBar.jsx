@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,8 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
-export default class NavBar extends Component {
-  render() {
+const NavBar = () => {
     return (
         <Navbar expand="lg" bg='dark' data-bs-theme="dark" sticky='top' >
         <Container fluid className="align-items-baseline">
@@ -41,5 +40,6 @@ export default class NavBar extends Component {
         </Container>
       </Navbar>
     )
-  }
 }
+
+export default NavBar;

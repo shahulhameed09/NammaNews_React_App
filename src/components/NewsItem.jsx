@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-export default class NewsItem extends Component {
-    render() {
-        let { title, desc, imageUrl, newsUrl, date, author, source } = this.props
+const NewsItem = (props) =>{
+        let { title, desc, imageUrl, newsUrl, date, author, source } = props
         return (
             <Card>
                 <div style={{
@@ -26,5 +25,5 @@ export default class NewsItem extends Component {
                 </Card.Body>
             </Card>
         )
-    }
 }
+export default NewsItem;
