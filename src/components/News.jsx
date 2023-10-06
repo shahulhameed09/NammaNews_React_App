@@ -30,15 +30,16 @@ const News = (props) => {
 
     useEffect(() => {
         updateNews();
-    }, [updateNews]);
+        //eslint-disable-next-line
+    }, []);
 
 
 
 
     const fetchMoreData = async () => {
-        setState({ page: state.page + 1 });
         setTimeout(async () => {
-            const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${state.page}&pageSize=${props.pageSize}`;
+            const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${state.page+1}&pageSize=${props.pageSize}`;
+            setState({ page: state.page + 1 });
             let data = await fetch(url);
             let parsedData = await data.json();
 
