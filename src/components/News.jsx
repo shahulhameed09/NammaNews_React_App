@@ -11,7 +11,7 @@ const News = (props) => {
     }
 
 
-    // document.title = `NammaNews | ${capitalFirstLetter(props.category)}`
+    document.title = `NammaNews | ${capitalFirstLetter(props.category)}`
     const [state, setState] = useState({
         articles: [],
         loading: true,
