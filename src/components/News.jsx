@@ -10,8 +10,6 @@ const News = (props) => {
         return word[0].toUpperCase() + word.slice(1);
     }
 
-
-    // document.title = `NammaNews | ${capitalFirstLetter(props.category)}`
     const [state, setState] = useState({
         articles: [],
         loading: true,
@@ -29,16 +27,14 @@ const News = (props) => {
     }
 
     useEffect(() => {
+        document.title = `NammaNews | ${capitalFirstLetter(props.category)}`
         updateNews();
         //eslint-disable-next-line
     }, []);
 
-
-
-
     const fetchMoreData = async () => {
         setTimeout(async () => {
-            const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${state.page+1}&pageSize=${props.pageSize}`;
+            const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${state.page + 1}&pageSize=${props.pageSize}`;
             setState({ page: state.page + 1 });
             let data = await fetch(url);
             let parsedData = await data.json();
